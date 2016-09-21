@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Validate</title>
+    <link rel="stylesheet prefetch" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <form action="" class="form-horizontal" data-validate="check">
+        <h1>登录信息</h1>
+
+        <div class="form-group">
+            <label class="control-label">用户名</label>
+            <input type="text" id="userName" name="userName" class="form-control" data-validate="required userName"
+                   placeholder="字母、数字等，用户名唯一">
+        </div>
+        <div class="form-group">
+            <label class="control-label">密码</label>
+            <input type="password" id="passWord" name="passWord" class="form-control" data-validate="required password"
+                   placeholder="不少于六位">
+        </div>
+        <div class="form-group">
+            <label class="control-label">确认密码</label>
+            <input type="password" id="passWord2" name="passWord2" class="form-control" data-confirm="passWord"
+                   data-validate="required password password2" placeholder="不少于六位">
+        </div>
+        <h1>个人信息</h1>
+
+        <div class="form-group">
+            <label class="control-label">姓名</label>
+            <input type="text" name="name" id="name" name="name" class="form-control" data-validate="required name"
+                   placeholder="姓名">
+        </div>
+        <div class="form-group">
+            <label class="control-label">Email</label>
+            <input type="email" autocomplete="off" id="email" name="email" class="form-control"
+                   data-validate="required email" placeholder="example@test.com">
+        </div>
+        <div class="form-group">
+            <label class="control-label">移动电话</label>
+            <input type="tel" id="phone" name="phone" class="form-control" data-validate="required phone"
+                   placeholder="xxx xxxx xxxx">
+        </div>
+        <div class="form-group">
+            <label class="control-label">固定电话</label>
+            <input type="tel" id="phone2" name="phone2" class="form-control" data-validate="required phone2"
+                   placeholder="区号+号码">
+        </div>
+        <div class="form-group">
+            <label class="control-label">出生日期</label>
+            <input type="date" id="birthday" name="birthday" class="form-control" data-validate="required date"
+                   placeholder="出生日期">
+        </div>
+        <div class="form-group">
+            <label class="control-label">个人网站</label>
+            <input type="url" id="website" name="website" class="form-control" data-validate="required url"
+                   placeholder="http://">
+        </div>
+
+        <div class="form-group">
+            <label class="control-label">性别</label>
+
+            <div class="checkbox-wrapper" data-validate="required">
+                <input type="radio" name="sex" value="male"><label class="label-option">男</label>
+                <input type="radio" name="sex" value="female"><label class="label-option">女</label>
+            </div>
+            <div class="tips">（*必选）</div>
+        </div>
+        <div class="form-group">
+            <label class="control-label">爱好</label>
+
+            <div class="checkbox-wrapper" data-validate="required" data-condition="2">
+                <input type="checkbox" name="habit" value="habit1"><label class="label-option">爱好一</label>
+                <input type="checkbox" name="habit" value="habit2"><label class="label-option">爱好二</label>
+                <input type="checkbox" name="habit" value="habit3"><label class="label-option">爱好三</label>
+            </div>
+            <div class="tips">（*至少选择两项）</div>
+        </div>
+        <div class="form-group">
+            <label class="control-label">家庭地址</label>
+            <input type="text" id="address" class="form-control" data-validate="required" placeholder="家庭地址">
+        </div>
+        <div class="form-group right">
+            <div class="checkbox-wrapper" data-validate="required">
+                <input type="checkbox" name="protocol" value="yes"><label class="tips label-option"
+                                                                          style="margin-right: 80px;">同意并接受《服务条款》</label>
+            </div>
+        </div>
+        <div class="form-group" style="text-align: center; margin-top: 20px;">
+            <button class="button" type="button" data-validate="submit">提交验证</button>
+        </div>
+    </form>
+</div>
+<script type="text/javascript" src="validator.js"></script>
+</body>
+</html>
